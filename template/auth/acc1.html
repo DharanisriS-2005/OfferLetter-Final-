@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accenture Career Journey</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family: Arial;
+            overflow:hidden;
+        }
+
+        .page{
+            display:none;
+            height:100vh;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            text-align:center;
+            position:relative;
+        }
+
+        #home{
+            display:flex;
+            background:lightblue;
+        }
+
+        #offer{ background:#fff3e0; }
+        #career{ background:#f4f4f4; }
+        #roles{ background:#e8f5e9; }
+        #training{ background:#ede7f6; }
+        #contact{ background:#e3f2fd; }
+
+        .box{
+            background:white;
+            padding:30px;
+            width:420px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+            z-index:2;
+        }
+
+        button{
+            padding:10px 20px;
+            background:blue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            margin-top:20px;
+        }
+
+        button:hover{
+            background:darkblue;
+        }
+
+        .congrats{
+            font-size:30px;
+            color:green;
+            font-weight:bold;
+        }
+
+        /* Balloons */
+        .balloon{
+            position:absolute;
+            width:30px;
+            height:40px;
+            border-radius:50%;
+            top:-50px;
+            animation:fall 6s linear infinite;
+        }
+
+        .b1{ left:10%; background:rgba(255, 0, 0, 0.509); animation-delay:0s;}
+        .b2{ left:20%; background:blue; animation-delay:1s;}
+        .b3{ left:30%; background:green; animation-delay:2s;}
+        .b4{ left:40%; background:orange; animation-delay:3s;}
+        .b5{ left:50%; background:pink; animation-delay:1s;}
+        .b6{ left:60%; background:rgb(128, 0, 128); animation-delay:2s;}
+        .b7{ left:70%; background:yellow; animation-delay:0s;}
+        .b8{ left:80%; background:cyan; animation-delay:3s;}
+
+        @keyframes fall{
+            0%{ top:-50px; }
+            100%{ top:100vh; }
+        }
+
+    </style>
+
+    <script>
+        function showPage(id){
+            var pages=document.getElementsByClassName("page");
+
+            for(var i=0;i<pages.length;i++){
+                pages[i].style.display="none";
+            }
+
+            document.getElementById(id).style.display="flex";
+        }
+    </script>
+
+</head>
+
+<body>
+
+<!-- Home Page -->
+<div id="home" class="page">
+
+    <h1>Welcome to Accenture Career Portal</h1>
+
+    <p>Click below to view your offer letter</p>
+
+    <button onclick="showPage('offer')">
+        View Offer Letter
+    </button>
+
+</div>
+
+<!-- Offer Letter -->
+<div id="offer" class="page">
+
+    <!-- Balloons -->
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+    <div class="balloon b5"></div>
+    <div class="balloon b6"></div>
+    <div class="balloon b7"></div>
+    <div class="balloon b8"></div>
+
+    <div class="box">
+
+        <div class="congrats">
+            🎉 Congratulations 🎉
+        </div>
+
+        <h2>Offer Letter</h2>
+
+        <p>Dear DHARANISRI SAKTHIVEL</p>
+
+        <p>You are selected as <b>Software Developer</b></p>
+
+        <p>Company: Accenture</p>
+        <p>Joining Date: 10 April 2026</p>
+        <p>Location: Chennai</p>
+        <p>Salary: 8LPA</p>
+
+        <button onclick="showPage('career')">
+            Next
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Career Page -->
+<div id="career" class="page">
+
+    <div class="box">
+
+        <h2>Career at Accenture</h2>
+
+        <p>Strong career growth and learning opportunities.</p>
+        <p>Real-time projects and mentor support.</p>
+
+        <button onclick="showPage('roles')">
+            Next
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Roles Page -->
+<div id="roles" class="page">
+
+    <div class="box">
+
+        <h2>Available Roles</h2>
+
+        <p>Software Developer</p>
+        <p>Web Developer</p>
+        <p>System Engineer</p>
+        <p>Data Analyst</p>
+
+        <button onclick="showPage('training')">
+            Next
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Training Page -->
+<div id="training" class="page">
+
+    <div class="box">
+
+        <h2>Training Program</h2>
+
+        <p>6 Months Training</p>
+        <p>Industry Mentors</p>
+        <p>Live Projects</p>
+        <p>Skill Development</p>
+
+        <button onclick="showPage('contact')">
+            Next
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Contact Page -->
+<div id="contact" class="page">
+
+    <div class="box">
+
+        <h2>Contact HR</h2>
+
+        <p>Email: hr@accenture.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>Location: Chennai</p>
+
+        <p><b>Thank You</b></p>
+
+        <button onclick="showPage('home')">
+            Back to Home
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
